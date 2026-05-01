@@ -1,0 +1,21 @@
+# Backend (Maven)
+backend/target/
+*.class
+
+# Frontend (Node)
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+npm-debug.log*
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.claude/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
