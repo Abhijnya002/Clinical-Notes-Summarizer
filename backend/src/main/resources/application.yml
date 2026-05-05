@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: clinical-notes-summarizer
+
+# Configuration for the local open-source LLM runtime (Ollama).
+# Swap base-url/model here to point at a different Ollama model, or at
+# an OpenAI-compatible endpoint (e.g. AWS Bedrock via a proxy) in production.
+llm:
+  ollama:
+    base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+    model: ${OLLAMA_MODEL:llama3.2}
+    timeout-seconds: 60
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+  endpoint:
+    health:
+      show-details: never
+
+logging:
+  level:
+    root: INFO
+    com.clinicalnotes.summarizer: INFO
